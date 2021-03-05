@@ -1,0 +1,10 @@
+asgiref==3.3.1
+Cython==0.29.22
+Django==3.1.7
+django-forms-bootstrap==3.1.0
+numpy==1.20.1
+opencv-python==4.5.1.48
+Pillow==8.1.0
+pytesseract==0.3.7
+pytz==2021.1
+sqlparse==0.4.1
