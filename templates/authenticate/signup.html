@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap_tags %}
+
+{% block title %}
+
+Signup
+
+{% endblock %}
+
+{% block body %}
+        {% if registered %}
+            <h1>Thankyou for REGISTERING with us</h1>
+            <a href="{% url 'homepage:home' %}"> click here to continue </a>
+        {% else %}
+            <h3>PLEASE fill the registration form below</h3>
+            <!-- user the enctype attribute because we are uploading images  -->
+            <form enctype="multipart/form-data" method="POST">
+                <div class="container sign-form">
+                    {% csrf_token %}
+                    
+                    {{ user_form |as_bootstrap  }}
+                    {{ user_profileform |as_bootstrap  }} 
+
+                
+                    <!-- {{ user_profileform.as_p }} -->
+                    <input type="submit" class = “btn btn-default” name="submit" value="submit">
+                </div>
+            </form>
+        {% endif %}
+        </div>
+
+{% endblock %}

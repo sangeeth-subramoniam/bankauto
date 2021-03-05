@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+
+Homepage
+
+{% endblock %}
+
+{% block body %}
+
+
+
+    {% if user.is_authenticated %}
+
+    <div class="jumbotron">
+        <h1>Hi {{curr_user.username}} , Your id is {{curr_user.id}}</h1>
+    </div>
+    <br><br>
+    <h3  style="text-align: center;">
+        start uploading the content that you want to digitalize.
+    </h3>
+    <br><br><br>
+
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-4">
+                    <a href=" {% url 'images:unapproved' curr_user.id %}"> <button class = "btn btn-lg centrify-button"> Click here for pending approval </button></a>
+                </div>
+
+                <div class="col-md-4">
+                    <a  href="{% url 'images:approved' curr_user.id %}"> <button class = "btn btn-lg centrify-button" > Approved Images </button></a>
+                </div>
+
+                <div class="col-md-4">
+                    <a  href="{% url 'images:upload' %}"> <button class = "btn btn-lg centrify-button" > Click here for new upload </button></a>
+                </div>
+
+            </div>  
+        </div>
+    </div>
+
+    {%else%}
+
+    <div class="jumbotron">
+        <h1>Please signin to continue. Thanks !</h1>
+    </div>
+
+    <a href="{% url 'registration:signin' %}"> <button class="btn btn-default centrify-button"> Sign in </button></a>
+    
+
+
+
+    {% endif %}
+
+
+
+
+{% endblock %}
+

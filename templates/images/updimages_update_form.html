@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap_tags %}
+{% block title %} Update {% endblock %}
+
+{% block body%}
+<div class="jumbotron">
+    Are you sure you want to approve the Image ?
+</div>
+<br>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form|as_bootstrap  }}
+    <input type="submit" value="Submit" />
+</form>
+
+{% endblock %}

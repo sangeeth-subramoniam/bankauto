@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap_tags %}
+{% block title %} New Upload {% endblock %}
+
+{% block body%}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form |as_bootstrap  }}
+    <input type="submit" value="Submit" />
+</form>
+{% endblock %}

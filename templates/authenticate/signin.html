@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %} Login Page {% endblock %}
+
+{% block body%}
+    <h1 style="text-align: center;">Fill in your credentials</h1>
+    <br>
+    <div class="container">
+    <div class="jumbotron fj">
+        <h2>Please sign in :</h2>
+        <br>
+        <form action="{% url  'registration:signin' %}" method="POST">
+
+            {% csrf_token %}
+            <label for="username"> UserName </label>
+            <input type="text" name = "username" placeholder="Enter the Username "  >
+
+            <br>
+            <br>
+
+            <label for="password"> Password </label>
+            <input type="password" name = "password" placeholder="enter the password "  >
+
+            <br>
+            <br>
+
+            <input type="submit" value="Submit">
+        
+        </form>
+    </div>
+</div>
+
+{% endblock %}
