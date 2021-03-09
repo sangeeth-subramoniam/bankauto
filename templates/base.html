@@ -29,9 +29,6 @@
                 <li> <a href="/"> <i class="fa fa-home" aria-hidden="true"> </i>  Home</a> </li>
                 <li><a href=" {% url 'homepage:contact' %}"> <i class="fa fa-phone" aria-hidden="true"></i></i> contact</a></li>
                 <li><a href="{% url 'homepage:about' %}"> <i class="fa fa-id-card" aria-hidden="true"></i> about</a></li>
-
-                
-                <li><a href="{% url 'registration:signup' %}"> <i class="fa fa-envelope" aria-hidden="true"></i> register</a></li>
             </ul>
             
             {% if user.is_authenticated %}

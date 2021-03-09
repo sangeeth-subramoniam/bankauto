@@ -15,7 +15,7 @@ Homepage
     {% if user.is_authenticated %}
 
     <div class="jumbotron">
-        <h1>Hi {{curr_user.username}} , Your id is {{curr_user.id}}</h1>
+        <h1>Hi {{curr_user.username}} , </h1>
     </div>
     <br><br>
     <h3  style="text-align: center;">
@@ -47,8 +47,8 @@ Homepage
     <div class="jumbotron">
         <h1>Please signin to continue. Thanks !</h1>
     </div>
-
-    <a href="{% url 'registration:signin' %}"> <button class="btn btn-default centrify-button"> Sign in </button></a>
+    <br><br><br>
+    <a href="{% url 'registration:signin' %}"> <button class="btn btn-lg centrify-button-home"> Sign in </button></a>
     
 
 
